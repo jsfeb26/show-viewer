@@ -5,8 +5,6 @@ import ShowList from '../components/ShowList';
 import CurrentShow from '../components/CurrentShow';
 import { shows } from '../shows.json';
 
-import styles from './ShowViewer.scss';
-
 class ShowViewer extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +18,7 @@ class ShowViewer extends Component {
     const showId = Number(this.props.match.params.showId) || 1;
 
     return (
-      <div className={styles.showViewerContainer}>
+      <div>
         <ShowList shows={shows} selectedId={showId} />
         <CurrentShow show={shows.find((show) => show.id === showId)} />
       </div>
