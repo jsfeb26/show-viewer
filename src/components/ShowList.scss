@@ -3,14 +3,14 @@
     display: flex;
     justify-content: center;
 
-    @media (max-width: 320px) {
+    @media (max-width: 980px) {
       order: 2;
     }
   }
 
   .showList {
     display: flex;
-    margin: 40px;
+    margin: 20px 40px;
     padding: 0 0 20px;
     overflow: scroll;
 
@@ -27,6 +27,11 @@
         border-radius: 5px;
         background-color: rgba(0,0,0,.5);
         -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    }
+
+    @media (max-width: 980px) {
+      padding: 10px 0 10px;
+      margin: 0;
     }
   }
 

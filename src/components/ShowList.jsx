@@ -6,6 +6,7 @@ import styles from './ShowList.scss';
 
 class ShowList extends Component {
   componentDidMount() {
+    // scrolls over so the selected movie is the first movie in view or as close as possible
     const parentOffest = document.getElementsByClassName(styles.showList)[0].offsetLeft;
     const selectedOffset = document.getElementsByClassName(styles.selected)[0].offsetLeft;
     const scrollAmount = selectedOffset - parentOffest;
@@ -14,6 +15,10 @@ class ShowList extends Component {
   }
   render() {
     const { shows, selectedId } = this.props;
+    if (!shows) {
+      return null;
+    }
+
     return (
       <div className={styles.showListContainer}>
         <div className={styles.showList}>

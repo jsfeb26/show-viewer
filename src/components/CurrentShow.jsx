@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import styles from './CurrentShow.scss';
 
 function CurrentShow({ show }) {
+  if (!show) {
+    return null;
+  }
+  
   return (
     <div className={styles.currentShowContainer}>
       {show &&

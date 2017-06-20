@@ -1,9 +1,9 @@
 :local {
   .currentShowContainer {
-    padding: 40px;
+    padding: 20px;
     font-family: sans-serif;
 
-    @media (max-width: 320px) {
+    @media (max-width: 980px) {
       order: 1;
     }
   }
@@ -15,11 +15,11 @@
   }
 
   .currentShowImage {
-    width: 230px;
+    width: 250px;
     padding-bottom: 10px;
 
-    @media (max-width: 320px) {
-      width: 100%;
+    @media (max-width: 980px) {
+      width: 220px;
     }
   }
 
