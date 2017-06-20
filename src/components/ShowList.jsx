@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class ShowList extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     const parentOffest = document.getElementsByClassName('showListContainer')[0].offsetLeft;
     const selectedOffset = document.getElementsByClassName('selected')[0].offsetLeft;
