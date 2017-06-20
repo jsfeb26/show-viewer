@@ -2,37 +2,41 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import styles from './ShowList.scss';
+
 class ShowList extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    const parentOffest = document.getElementsByClassName('showListContainer')[0].offsetLeft;
-    const selectedOffset = document.getElementsByClassName('selected')[0].offsetLeft;
+    const parentOffest = document.getElementsByClassName(styles.showList)[0].offsetLeft;
+    const selectedOffset = document.getElementsByClassName(styles.selected)[0].offsetLeft;
     const scrollAmount = selectedOffset - parentOffest;
-    
-    document.getElementsByClassName('showListContainer')[0].scrollLeft = scrollAmount;
+
+    document.getElementsByClassName(styles.showList)[0].scrollLeft = scrollAmount;
   }
   render() {
     const { shows, selectedId } = this.props;
     return (
-      <ul className="showListContainer">
-        {
-          shows.map((show) => {
-            return (
-              <Link key={show.id} to={`/show/${show.id}`} className="link">
-                <div className={`showListShow ${show.id === selectedId ? 'selected' : ''}`}>
-                  <img
-                    className="showListImage"
-                    src={show.product_image_url}
-                    alt={show.title}
-                  />
-                </div>
-              </Link>
-            );
-          })
-        }
-      </ul>
+      <div className={styles.showListContainer}>
+        <div className={styles.showList}>
+          {
+            shows.map((show) => {
+              return (
+                <Link key={show.id} to={`/show/${show.id}`} className={styles.link}>
+                  <div className={`${styles.showListShow} ${show.id === selectedId ? styles.selected : ''}`}>
+                    <img
+                      className={styles.showListImage}
+                      src={show.product_image_url}
+                      alt={show.title}
+                    />
+                  </div>
+                </Link>
+              );
+            })
+          }
+        </div>
+      </div>
     );
   }
 }

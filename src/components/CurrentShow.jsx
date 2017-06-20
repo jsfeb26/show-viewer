@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './CurrentShow.scss';
+
 function CurrentShow({ show }) {
   return (
-    <div className="currentShowContainer">
+    <div className={styles.currentShowContainer}>
       {show &&
-        <div className="currentShow">
+        <div className={styles.currentShow}>
           <img
-            className="currentShowImage"
+            className={styles.currentShowImage}
             src={show.product_image_url}
             alt={show.title}
           />
-          <span className="currentShowTitle">{show.title}</span>
-          <span className="currentShowEpisodeCount">{`${show.episodes} Episodes`}</span>
+          <span className={styles.currentShowTitle}>{show.title}</span>
+          <span className={styles.currentShowEpisodeCount}>{`${show.episodes} Episodes`}</span>
         </div>
       }
       {!show &&
